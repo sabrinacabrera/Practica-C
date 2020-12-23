@@ -11,7 +11,7 @@
 #include <conio.h>
 #include <ctype.h>
 
-//------------------CALCULOS--------------------------------------------
+//------------------CALCULOS------------------------------
 
 int getDivision(float *pResultado,int operador1,int operador2){
 	int todoOK=-1;
