@@ -8,6 +8,25 @@
 #ifndef BIBLIOTECA_H_
 #define BIBLIOTECA_H_
 
+//---------------------------------Validaciones-------------------------------------------------------------/
+/** Funcion que valida si es letra
+ * letra: array
+ * itsOK: devuelve -1 si hay error, 0 si es letra.
+ */
+int esLetra(char Letra[]);
+
+/** Funcion que valida si es float
+ * pAux: array
+ * itsOK: devuelve -1 si hay error, 0 si es letra.
+ */
+int isFloat(char* pAux)
+
+/** funcion que valida que sea numero entero
+ *  *pAux: puntero del numero
+ *  todoOK: devuelve -1 si hay error, 0 si es numero int
+ */
+int esNumeroInt(char *pAux)
+
 //----------------------CALCULOS-----------------------------------------------------------------
 /** funcion dividir
  * recibe un puntero resultado
@@ -70,9 +89,9 @@ int get_NumeroFloat(float * pResultado,char * mensaje, char * mensajeError,float
 
  */
 
-int get_Char(char * pResultado,char * mensaje, char * mensajeError,char minimo,char maximo,int reintentos);
+int get_Char(char* pResultado,char * mensaje, char * mensajeError,char minimo,char maximo,int reintentos);
 
-//-----------------------------------------------------------------------------------------------------
+
 
 
 #endif /* BIBLIOTECA_H_ */
