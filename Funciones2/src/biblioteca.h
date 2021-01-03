@@ -19,13 +19,13 @@ int esLetra(char Letra[]);
  * pAux: array
  * itsOK: devuelve -1 si hay error, 0 si es letra.
  */
-int isFloat(char* pAux)
+int esFloat(char* pAux);
 
 /** funcion que valida que sea numero entero
  *  *pAux: puntero del numero
  *  todoOK: devuelve -1 si hay error, 0 si es numero int
  */
-int esNumeroInt(char *pAux)
+int esNumeroInt(char *pAux);
 
 //----------------------CALCULOS-----------------------------------------------------------------
 /** funcion dividir
@@ -64,7 +64,6 @@ int getmultiplicacion(float *pResultado,int operador1,int operador2);
 	*minimo: Valor mínimo admitido (inclusive)
 	* maximo: Valor máximo admitido (inclusive)
 	* reintentos: Cantidad de veces que se le volverá a pedir al usuario que ingrese un dato en caso de error.
-
  */
 int get_NumeroInt(int * pResultado,char * mensaje, char * mensajeError,int minimo,int maximo,int reintentos);
 
@@ -75,7 +74,6 @@ int get_NumeroInt(int * pResultado,char * mensaje, char * mensajeError,int minim
 	*minimo: Valor mínimo admitido (inclusive)
 	* maximo: Valor máximo admitido (inclusive)
 	* reintentos: Cantidad de veces que se le volverá a pedir al usuario que ingrese un dato en caso de error.
-
  */
 
 int get_NumeroFloat(float * pResultado,char * mensaje, char * mensajeError,float minimo,float maximo,int reintentos);
@@ -87,7 +85,6 @@ int get_NumeroFloat(float * pResultado,char * mensaje, char * mensajeError,float
 	*minimo: Valor mínimo admitido (inclusive)
 	* maximo: Valor máximo admitido (inclusive)
 	* reintentos: Cantidad de veces que se le volverá a pedir al usuario que ingrese un dato en caso de error.
-
  */
 
 /** funcion get float , se asegura que esté dentro de los limites establecidos, y que sea float

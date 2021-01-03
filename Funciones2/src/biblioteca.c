@@ -1,9 +1,10 @@
 /*
  * biblioteca.c
  *
- *  Created on: 21 dic. 2020
+ *  Created on: 3 ene. 2021
  *      Author: gisel
  */
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -232,7 +233,7 @@ int getFloat(float*pAux)
     char auxString[200];
     int isOk =-1;
 
-    if(getCadena(auxString,200) == 0 && isFloat(auxString) == 0)
+    if(getCadena(auxString,200) == 0 && esFloat(auxString) == 0)
     {
         *pAux = atof(auxString); //to float
         isOk = 0; //exito
@@ -273,5 +274,3 @@ int get_NumeroFloat(float * pResultado,char * mensaje, char * mensajeError,float
 	 }
 		return todoOK;
 	}
-
-
