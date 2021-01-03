@@ -10,13 +10,12 @@
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
-
+#include "biblioteca.h"
 
 //-----------------VALIDACIONES ARRAY-----------------//
 
 
-int esLetra(char Letra[])
-{
+int esLetra(char Letra[]){
 	int isOk = -1;
 
 	for(int i = 0; Letra[i] != '\0'; i++)
@@ -170,7 +169,29 @@ int get_NumeroInt(int * pResultado,char * mensaje, char * mensajeError,int minim
 	return todoOK;
 }
 
+int getCadena(char* pAux, int limit)
+{
+    char auxString[4000];
+    int isOk = -1;
 
+    if (pAux != NULL && limit > 0)
+    {
+        fflush(stdin);
+        fgets(auxString,sizeof(auxString),stdin);
+
+        if (auxString[strlen(auxString)-1]=='\n')
+        {
+            auxString[strlen(auxString)-1]='\0';
+        }
+        if(strlen(auxString)<= limit)
+        {
+            strncpy(pAux, auxString, limit);
+            isOk=0; //exito
+        }
+    }
+
+    return isOk;
+}
 
 
 int get_Char(char* pResultado,char * mensaje, char * mensajeError,char minimo,char maximo,int reintentos)
@@ -206,7 +227,18 @@ int get_Char(char* pResultado,char * mensaje, char * mensajeError,char minimo,ch
 	 }
 
 
+int getFloat(float*pAux)
+{
+    char auxString[200];
+    int isOk =-1;
 
+    if(getCadena(auxString,200) == 0 && isFloat(auxString) == 0)
+    {
+        *pAux = atof(auxString); //to float
+        isOk = 0; //exito
+    }
+    return isOk;
+}
 
 
 int get_NumeroFloat(float * pResultado,char * mensaje, char * mensajeError,float minimo,float maximo,int reintentos){
@@ -214,7 +246,7 @@ int get_NumeroFloat(float * pResultado,char * mensaje, char * mensajeError,float
 	float bufferFloat; //auxiliar
 
 	//verifico que ninguno de los punteros sea nulo o que los datos sean razonables
-	 if(pResultado !=NULL && mensaje !=NULL && mensajeError != NULL && minimo<=maximo && reintentos >=0)
+	 if(pResultado !=NULL && mensaje !=NULL && mensajeError != NULL && minimo<=maximo && reintentos >=0 && getFloat(&bufferFloat) == 0)
 	 {
 		do{
 			 printf("%s",mensaje); //imprimo mensaje
@@ -224,6 +256,11 @@ int get_NumeroFloat(float * pResultado,char * mensaje, char * mensajeError,float
 			 //valido que el dato se encuentre entre max y min
 			 if(bufferFloat >=minimo && bufferFloat <=maximo)
 			 {
+
+
+
+
+
 				 *pResultado=bufferFloat; // si entra acá todo OK entonces paso bufferInt a pResultado
 				  todoOK=0; //cambio el resultado del retorno todoOK
 				  break; //si es todo ok se rompe el loop

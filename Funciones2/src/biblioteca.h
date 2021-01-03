@@ -34,6 +34,7 @@ int esNumeroInt(char *pAux)
  * recibe segundo operando
  */
 int getDivision(float *pResultado,int operador1,int operador2);
+
 /**funcion suma
  * recibe un puntero resultado
  * recibe primer operando
@@ -89,8 +90,22 @@ int get_NumeroFloat(float * pResultado,char * mensaje, char * mensajeError,float
 
  */
 
+/** funcion get float , se asegura que esté dentro de los limites establecidos, y que sea float
+ * recibe un puntero float
+ * devuelve -1 error, 0 sino
+ *
+ */
+
+int getFloat(float*pAux);
+
 int get_Char(char* pResultado,char * mensaje, char * mensajeError,char minimo,char maximo,int reintentos);
 
+/**funcion get cadena
+ * recibe un puntero
+ * recibe  un limite
+ * devuelve -1 error, 0 sino
+ */
+int getCadena(char* pAux, int limit);
 
 
 
